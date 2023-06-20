@@ -1,0 +1,34 @@
+
+.contactsBlock {
+    height: 50vh;
+    background-color: burlywood;
+}
+.contactsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    background-color: orange;
+}
+.contentContainer {
+    width: 280px;
+    height: 40px;
+    border: 1px solid springgreen;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content {
+    height: 40px;
+    width: 40px;
+    background-color: darkgrey;
+}
+
+.rights{
+    background-color: #88bbd5;
+}
+
