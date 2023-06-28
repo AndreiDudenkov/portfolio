@@ -14,3 +14,10 @@
     height: 400px;
     background-color: darkseagreen;
 }
+
+
+@media screen and (max-width: 812px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+}
