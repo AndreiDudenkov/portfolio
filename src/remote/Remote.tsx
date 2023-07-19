@@ -1,16 +1,36 @@
 import React from 'react';
 import s from './Remote.module.css';
-import sContainer from "../common/styles/Container.module.css";
+import  {Container} from '../common/styles/Styeles';
+import styled from 'styled-components';
 
 
 export const Remote = () => {
     return (
-        <div className={s.remoteBlock}>
-            <div className={`${sContainer.container} ${s.remoteContainer}`}>
-                <h2 className={s.title}>Considering remote work</h2>
-                <button className={s.button}>Hire me</button>
-            </div>
-        </div>
+        <RemoteBlock>
+            <RemoteContainer>
+                <h2>Considering remote work</h2>
+                <StyledButton>Hire me</StyledButton>
+            </RemoteContainer>
+        </RemoteBlock>
     )
 
 }
+const RemoteBlock = styled.div`
+  background-color: mediumaquamarine;
+`
+
+const RemoteContainer = styled.div`
+  ${Container};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & h2 {
+    background-color: orange;
+  }
+`
+const StyledButton = styled.div`
+  height: 50px;
+  width: 200px;
+`
+
