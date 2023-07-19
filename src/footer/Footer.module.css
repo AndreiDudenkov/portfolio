@@ -32,3 +32,8 @@
     background-color: #88bbd5;
 }
 
+@media screen and (max-width: 360px) {
+    .contentContainer {
+        width: 100%;
+    }
+}

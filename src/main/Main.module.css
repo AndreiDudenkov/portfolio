@@ -21,3 +21,10 @@
         flex-direction: column;
     }
 }
+
+@media screen and (max-width: 438px) {
+    .text, .photo {
+        width: 100%;
+        align-items: center;
+    }
+}

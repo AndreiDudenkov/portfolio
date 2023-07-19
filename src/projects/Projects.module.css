@@ -1,18 +1,15 @@
 .projectsBlock {
-    /*min-height: 100vh;*/
-    background-color: #a29b5d;
-
+    background-image: url("https://alian4x.com/html/mumbrass/images/bg3.jpg");
+    padding: 100px 0;
 }
 
 .projectsContainer {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+ 
 }
-
-.title {
-    background-color: slateblue;
-}
-
 .projects {
     border: 1px solid orange;
     width: 100%;
@@ -21,7 +18,9 @@
     flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1104px) {
+
+
+@media screen and (max-width: 755px) {
     .projects {
         justify-content: center;
     }

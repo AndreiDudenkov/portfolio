@@ -13,9 +13,11 @@ export const Project:React.FC<ProjectType> = ({name, description}) => {
             <div className={s.imgContainer}>
                 <a className={s.button}>View</a>
             </div>
-            <div className={s.projName}>{name}</div>
+            <h3 className={s.projName}>{name}</h3>
             <span className={s.description}>{description}</span>
         </div>
     )
 
 }
+
+
