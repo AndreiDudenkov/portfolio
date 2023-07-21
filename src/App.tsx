@@ -11,7 +11,6 @@ import {Footer} from "./footer/Footer";
 export const App = () => {
     return (
         <div>
-            <Header/>
             <Main/>
             <Skills/>
             <Projects/>

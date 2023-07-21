@@ -4,28 +4,34 @@ import {Container} from '../common/styles/Styeles';
 import {Project} from './project/Project';
 import {Title} from '../common/components/Title';
 import styled from 'styled-components';
-
+import FactCheck from '@mui/icons-material/FactCheck';
+import ThreeP from '@mui/icons-material/ThreeP';
+import WallAndTree from './../assets/image/wallAndTree.jpg';
 
 export const Projects = () => {
+
     return (
         <ProjectsBlock>
             <ProjectsContainer>
                 <Title title={'My projects'}/>
                 <ProjectsStyle>
-                    <Project name={'Todolist'} description={'React note taking app'} img={'imgTodolist'}/>
-                    <Project name={'Social network'} description={'React app social network'} img={'imgSocialNetwork'}/>
+                    <Project name={'Todolist'}  img={<FactCheck></FactCheck>}/>
+                    <Project name={'Social network'} img={<ThreeP></ThreeP>}/>
                 </ProjectsStyle>
             </ProjectsContainer>
         </ProjectsBlock>
     )
 
 }
+ const ProjectsBlockBCGImage = `url(${WallAndTree})`
+
 const ProjectsBlock = styled.div`
-  background-image: url("https://alian4x.com/html/mumbrass/images/bg3.jpg");
-  padding: 100px 0;
+  background-image:${ProjectsBlockBCGImage};
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 `
 const ProjectsStyle = styled.div`
-  border: 1px solid orange;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -33,6 +39,7 @@ const ProjectsStyle = styled.div`
 `
 const ProjectsContainer = styled.div`
   ${Container};
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

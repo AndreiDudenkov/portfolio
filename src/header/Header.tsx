@@ -15,7 +15,7 @@ export const  Header = ()=> {
 }
 const HeaderStyles = styled.div`
   height: 80px;
-  background-color: #88bbd5;
+  padding:  0 100px 0 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
