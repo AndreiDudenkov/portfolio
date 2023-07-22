@@ -1,22 +1,31 @@
 import React from 'react';
 import s from './Remote.module.css';
-import  {Container} from '../common/styles/Styeles';
+import {Container, SecondaryFont} from '../common/styles/Styeles';
 import styled from 'styled-components';
+import {Title} from '../common/components/Title';
+import Bridge from '../assets/image/Bridge.jpg';
+import {PrimaryBackgroundColor, PrimaryTextColor} from '../common/styles/Colors';
 
 
 export const Remote = () => {
     return (
         <RemoteBlock>
             <RemoteContainer>
-                <h2>Considering remote work</h2>
-                <StyledButton>Hire me</StyledButton>
+                <Title title={'Considering remote work'}/>
+                <SeeLink>hire me</SeeLink>
             </RemoteContainer>
         </RemoteBlock>
     )
 
 }
+const BridgeBCGImage = `url(${Bridge})`
+
 const RemoteBlock = styled.div`
-  background-color: mediumaquamarine;
+  
+  height: 50vh;
+  background-image: ${BridgeBCGImage};
+  background-size: cover;
+  background-position: center;
 `
 
 const RemoteContainer = styled.div`
@@ -25,12 +34,34 @@ const RemoteContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  & h2 {
-    background-color: orange;
-  }
+
 `
-const StyledButton = styled.div`
+// const StyledButton = styled.div`
+//   height: 50px;
+//   width: 200px;
+// `
+// const StyledHeader = styled.h2`
+//   height: 50px;
+//   width: 200px;
+// `
+const SeeLink = styled.a`
   height: 50px;
   width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${SecondaryFont};
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #fff;
+  text-transform: uppercase;
+  border-radius: 30px;
+  &:hover {
+    ${PrimaryBackgroundColor}
+    ${PrimaryTextColor};
+  }
+  &:active {
+    box-shadow: 2px 2px 5px #b0ca1e;
+  }
 `
-

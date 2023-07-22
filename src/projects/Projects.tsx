@@ -6,6 +6,7 @@ import {Title} from '../common/components/Title';
 import styled from 'styled-components';
 import FactCheck from '@mui/icons-material/FactCheck';
 import ThreeP from '@mui/icons-material/ThreeP';
+import Filter1 from '@mui/icons-material/Filter1';
 import WallAndTree from './../assets/image/wallAndTree.jpg';
 
 export const Projects = () => {
@@ -17,6 +18,7 @@ export const Projects = () => {
                 <ProjectsStyle>
                     <Project name={'Todolist'}  img={<FactCheck></FactCheck>}/>
                     <Project name={'Social network'} img={<ThreeP></ThreeP>}/>
+                    <Project name={'Counter'} img={<Filter1></Filter1>}/>
                 </ProjectsStyle>
             </ProjectsContainer>
         </ProjectsBlock>
