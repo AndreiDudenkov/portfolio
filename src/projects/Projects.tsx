@@ -8,6 +8,7 @@ import FactCheck from '@mui/icons-material/FactCheck';
 import ThreeP from '@mui/icons-material/ThreeP';
 import Filter1 from '@mui/icons-material/Filter1';
 import WallAndTree from './../assets/image/wallAndTree.jpg';
+import {Remote} from '../remote/Remote';
 
 export const Projects = () => {
 
@@ -22,6 +23,7 @@ export const Projects = () => {
                 </ProjectsStyle>
             </ProjectsContainer>
         </ProjectsBlock>
+
     )
 
 }

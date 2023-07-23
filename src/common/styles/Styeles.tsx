@@ -1,7 +1,7 @@
 import {css} from 'styled-components';
 
 export const Container = css`
-  border: 1px solid;
+  //border: 1px solid;
   height: 100%;
   width: 80%;
   margin: 0 auto;

@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Contacts.module.css';
 import {Container, PrimaryFont, SecondaryFont} from '../common/styles/Styeles';
 import styled from 'styled-components';
 import {Title} from '../common/components/Title';
@@ -8,56 +7,39 @@ import {PrimaryBackgroundColor, PrimaryColor, PrimaryTextColor} from '../common/
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import HomeIcon from '@mui/icons-material/Home';
+import {Contact} from './Contact';
+
 
 export const Contacts = () => {
+    const PhoneIconSVG = <LocalPhoneIcon></LocalPhoneIcon>
+    const EmailIconSVG = <EmailIcon></EmailIcon>
+    const HomeIconSVG = <HomeIcon></HomeIcon>
     return (
         <ContactsBlock>
             <ContactsContainer>
                 <Title title={'My contacts'}/>
                 <ContactsAndFormBlock>
                     <StyledContacts>
-                        <StyledContact>
-                            <StyledSVG>
-                                <StyledSVGSpan>
-                                    <LocalPhoneIcon />
-                                </StyledSVGSpan>
-                            </StyledSVG>
-                            <StyledH5>
-                                CALL ME
-                                <StyledP>+375(29)534-12-42</StyledP>
-                            </StyledH5>
-                        </StyledContact>
-                        <StyledContact>
-                            <StyledSVG>
-                                <StyledSVGSpan>
-                                    <EmailIcon />
-                                </StyledSVGSpan>
-                            </StyledSVG>
-                          <StyledH5>
-                              EMAIL ME
-                              <StyledP>andrei634d@gamil.com</StyledP>
-                          </StyledH5>
-                        </StyledContact>
-                        <StyledContact>
-                            <StyledSVG>
-                                <StyledSVGSpan>
-                                    <HomeIcon />
-                                </StyledSVGSpan>
-                            </StyledSVG>
-                            <StyledH5>
-                                ADDRESS
-                                <StyledP>Belarus, Vitebsk</StyledP>
-                            </StyledH5>
-                        </StyledContact>
+                        <Contact svg={PhoneIconSVG} title={'CALL ME'} content={'+375(29)534-12-42'}/>
+                        <Contact svg={EmailIconSVG} title={'EMAIL ME'} content={'andrei634d@gmail.com'}/>
+                        <Contact svg={HomeIconSVG} title={'ADDRESS'} content={'Belarus, Vitebsk'}/>
                     </StyledContacts>
                     <Form>
                         <InputsBlock>
-                            <StyledInput type="text"/>
-                            <StyledInput type="text"/>
+                            <InputWrapper>
+                                <StyledInput type="text" required placeholder='Your Name *'/>
+                            </InputWrapper>
+                            <InputWrapper>
+                                <StyledInput type="text" required placeholder='Your Email *'/>
+                            </InputWrapper>
                         </InputsBlock>
-                        <StyledTextArea name="" id="" rows={+'10'}></StyledTextArea>
+                        <TextareaWrapper>
+                            <StyledTextArea
+                                name="" id="" rows={+'10'}
+                                required placeholder='Message *'>
+                            </StyledTextArea>
+                        </TextareaWrapper>
                     </Form>
-
                 </ContactsAndFormBlock>
                 <SubmitButton>Submit</SubmitButton>
             </ContactsContainer>
@@ -86,99 +68,22 @@ const ContactsContainer = styled.div`
   }
 `
 const Form = styled.form`
-  border: 1px solid black;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 `
 const StyledContacts = styled.div`
-  //background-color: red;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:center;
   width: 40%;
   margin-right: 50px;
-`
-const StyledContact = styled.div`
-  //border: 2px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  `
-  const StyledH5 = styled.h5`
-    ${PrimaryFont};
-    ${PrimaryTextColor};
-    font-size: 21px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    margin: 0;
-  `
-const StyledP = styled.p`
-  text-transform:none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: .4px;
-  margin: 0;
-  `
-
-
-const StyledSVG = styled.div`
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  border: 7px solid rgba(255,255,255,.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //margin-right: 20px;
-  position: relative;
-
-  &::before {
-    content: "";
-    height: 2px;
-    width: 64px;
-    background-color: #b0ca1e;
-    position: absolute;
-    z-index: 1;
-    animation: rotateLine 4s linear infinite;
-    animation-play-state: paused;
-  }
-  &:hover::before {
-    animation-play-state: running;
-  }
-  @keyframes rotateLine {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } ;
-`
-const StyledSVGSpan = styled.span`
-  background-color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 3;
-  text-decoration: none;
-  color: #b0ca1e;
-  -webkit-transition: all ease-in-out .3s;
-  -o-transition: all ease-in-out .3s;
-  transition: all ease-in-out .3s;
-  //&::before {
-  //  content: "";
-  //}
+  padding-top: 10px;
 `
 const ContactsAndFormBlock = styled.div`
-  height: 30%;
+  //height: 30%;
   width: 100%;
   //background-color: orange;
   display: flex;
@@ -186,7 +91,6 @@ const ContactsAndFormBlock = styled.div`
   justify-content: flex-start;
   margin-top: -150px;
 `
-
 const SubmitButton = styled.button`
   height: 50px;
   width: 200px;
@@ -201,7 +105,6 @@ const SubmitButton = styled.button`
   text-transform: uppercase;
   border-radius: 30px;
   border: none;
-
   &:hover {
     ${PrimaryBackgroundColor}
     ${PrimaryTextColor};
@@ -218,6 +121,7 @@ const StyledInput = styled.input`
   border-radius: 4px;
   border-bottom: 1px solid #eee;
   margin: 10px;
+  outline: none;
 `
 const StyledTextArea = styled.textarea`
   padding: 14px 50px 14px 25px;
@@ -225,9 +129,22 @@ const StyledTextArea = styled.textarea`
   border-radius: 4px;
   border-bottom: 1px solid #eee;
   margin: 10px;
+  width: 100%;
+  resize: none;
+  outline: none;
 `
 const InputsBlock = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 0;
+`
+const InputWrapper = styled.div`
+  display: flex;
+  width: 100%;
+`
+const TextareaWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 `

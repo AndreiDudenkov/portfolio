@@ -23,7 +23,6 @@ export const Project: React.FC<ProjectType> = ({name, img}) => {
                 <ProjectName>{name}</ProjectName>
             </ImageProjectNameContainer>
             <ViewLink>View</ViewLink>
-            {/*<Description>{description}</Description>*/}
         </ProjectStyle>
     )
 

@@ -13,7 +13,6 @@ export const Skill: React.FC<SkillType> = ({technology, icon}) => {
         <StyledSkill>
             <Icon>{icon}</Icon>
             <h3>{technology}</h3>
-            {/*<span>{description}</span>*/}
         </StyledSkill>
     )
 
