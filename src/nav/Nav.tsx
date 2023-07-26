@@ -1,7 +1,6 @@
 import React from 'react';
-import s from './Nav.module.css';
 import styled from 'styled-components';
-import {PrimaryBackgroundColor, PrimaryColor, PrimaryTextColor} from '../common/styles/Colors';
+import {PrimaryColor, PrimaryTextColor} from '../common/styles/Colors';
 import {SecondaryFont} from '../common/styles/Styeles';
 
 
@@ -17,10 +16,12 @@ export const Nav = () => {
 
 }
 const NavStyles = styled.div`
-  width: 300px;
   display: flex;
   justify-content: space-between;
-
+  margin: 10px;
+  @media screen and (max-width: 768px) {
+    margin: 0 auto;
+  }
 `
 const NavLink = styled.a`
   ${PrimaryTextColor};
@@ -28,9 +29,11 @@ const NavLink = styled.a`
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
+  padding: 5px;
   &:hover {
     ${PrimaryColor};
   }
+
   &:active {
     text-shadow: 2px 2px 5px #b0ca1e;
   }

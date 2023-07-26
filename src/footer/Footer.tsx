@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Footer.module.css';
 import {Container} from '../common/styles/Styeles';
 import styled from 'styled-components';
 import BigLeafs from '../assets/image/BigLeafs.jpg';
@@ -35,11 +34,14 @@ export const Footer = () => {
 
 }
 const FooterBCGImage = `url(${BigLeafs})`
+
 const ContactsBlock = styled.div`
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
   background-image: ${FooterBCGImage};
   background-size: cover;
   background-position: center;
-  height: 50vh;
   background-color: burlywood;
 `
 const ContentContainer = styled.div`
@@ -48,19 +50,14 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: -100px;
 `
 const ContactsContainer = styled.div`
   ${Container};
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 360px) {
-    & ${ContentContainer} {
-      width: 100%;
-    }
-  }
 `
 
 const Content = styled.div`
@@ -78,9 +75,9 @@ const Content = styled.div`
   }
 `
 
-const Rights = styled.p`
+const Rights = styled.div`
   color: #fff;
-  margin-bottom: 0;
+ padding: 50px;
   font-weight: 500;
   letter-spacing: .5px;
   font-size: 15px;

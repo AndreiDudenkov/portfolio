@@ -7,6 +7,7 @@ import {Projects} from "./projects/Projects";
 import {Remote} from "./remote/Remote";
 import {Contacts} from "./contacts/Contacts";
 import {Footer} from "./footer/Footer";
+import {isTypedArray} from 'util/types';
 
 export const App = () => {
     return (
@@ -21,3 +22,5 @@ export const App = () => {
     )
 
 }
+
+// const AppWrapp

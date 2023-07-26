@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Header.module.css';
 import {Nav} from "../nav/Nav";
 import styled from 'styled-components';
 
@@ -11,7 +10,6 @@ export const  Header = ()=> {
             <Nav/>
         </HeaderStyles>
     )
-
 }
 const HeaderStyles = styled.div`
   height: 80px;
@@ -19,6 +17,7 @@ const HeaderStyles = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  
 `
 
 

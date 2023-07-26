@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Skills.module.css';
 import {Container} from '../common/styles/Styeles';
 import {Skill} from "./skill/Skill";
 import {Title} from '../common/components/Title';
@@ -17,18 +16,18 @@ export const Skills = () => {
             <SkillsContainer>
                 <Title title={'My skills'}/>
                 <StyledSkills>
-                    <Skill technology={'HTML'} icon={<Html></Html>}/>
-                    <Skill technology={'JS'} icon={<Javascript></Javascript>}/>
-                    <Skill technology={'CSS'} icon={<Css></Css>}/>
-                    <Skill technology={'REACT'} icon={<LiaReact size={150}/>}/>
+                    <Skill technology={'HTML'} icon={<Html/>}/>
+                    <Skill technology={'JS'} icon={<Javascript/>}/>
+                    <Skill technology={'CSS'} icon={<Css/>}/>
+                    <Skill technology={'REACT'} icon={<LiaReact/>}/>
                 </StyledSkills>
             </SkillsContainer>
         </SkillsBlock>
     )
-
 }
 
 const SkillBCGImage = `url(${Forest})`
+
 const SkillsBlock = styled.div`
   min-height: 100vh;
   background-image: ${SkillBCGImage};

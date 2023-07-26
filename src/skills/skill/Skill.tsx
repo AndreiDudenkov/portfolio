@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Skill.module.css';
 import styled from 'styled-components';
 import {PrimaryColor} from '../../common/styles/Colors';
 
@@ -32,15 +31,19 @@ const StyledSkill = styled.div`
   background-size: cover;
   background-position: center;
 `
-export const Icon = styled.svg`
+export const Icon = styled.div`
   display: flex;
   height: 150px;
   width: 60%;
-  ${PrimaryColor};
   justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
   transition: height 1s;
+  & svg {
+    height: 150px;
+    width: 150px;
+    ${PrimaryColor};
+    background-size: cover;
+    background-position: center;
+  }
 `
 

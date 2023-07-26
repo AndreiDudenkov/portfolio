@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FormEventHandler, MouseEventHandler, useState} from 'react';
 import {Container, PrimaryFont, SecondaryFont} from '../common/styles/Styeles';
 import styled from 'styled-components';
-import {Title} from '../common/components/Title';
+import {Title, TitleStyle} from '../common/components/Title';
 import Leafs from '../assets/image/Leafs.jpg';
 import {PrimaryBackgroundColor, PrimaryColor, PrimaryTextColor} from '../common/styles/Colors';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -11,9 +11,16 @@ import {Contact} from './Contact';
 
 
 export const Contacts = () => {
-    const PhoneIconSVG = <LocalPhoneIcon></LocalPhoneIcon>
-    const EmailIconSVG = <EmailIcon></EmailIcon>
-    const HomeIconSVG = <HomeIcon></HomeIcon>
+    const PhoneIconSVG = <LocalPhoneIcon/>
+    const EmailIconSVG = <EmailIcon/>
+    const HomeIconSVG = <HomeIcon/>
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const submitHandler:FormEventHandler<HTMLFormElement>  = (e) => {
+        e.preventDefault()
+        alert((`Name: ${name}\nEmail: ${email}\nMessage: ${message}`))
+    }
     return (
         <ContactsBlock>
             <ContactsContainer>
@@ -24,24 +31,30 @@ export const Contacts = () => {
                         <Contact svg={EmailIconSVG} title={'EMAIL ME'} content={'andrei634d@gmail.com'}/>
                         <Contact svg={HomeIconSVG} title={'ADDRESS'} content={'Belarus, Vitebsk'}/>
                     </StyledContacts>
-                    <Form>
+                    <Form onSubmit={submitHandler}>
                         <InputsBlock>
                             <InputWrapper>
-                                <StyledInput type="text" required placeholder='Your Name *'/>
+                                <StyledInput type="text"
+                                             required placeholder="Your Name *"
+                                             value={name}
+                                             onChange={(e) => setName(e.target.value)}/>
                             </InputWrapper>
                             <InputWrapper>
-                                <StyledInput type="text" required placeholder='Your Email *'/>
+                                <StyledInput type="text"
+                                             required placeholder="Your Email *" value={email}
+                                             onChange={(e) => setEmail(e.target.value)}/>
                             </InputWrapper>
                         </InputsBlock>
                         <TextareaWrapper>
                             <StyledTextArea
                                 name="" id="" rows={+'10'}
-                                required placeholder='Message *'>
-                            </StyledTextArea>
+                                required placeholder="Message *"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}/>
                         </TextareaWrapper>
+                        <SubmitButton type="submit">Submit</SubmitButton>
                     </Form>
                 </ContactsAndFormBlock>
-                <SubmitButton>Submit</SubmitButton>
             </ContactsContainer>
         </ContactsBlock>
     )
@@ -51,21 +64,32 @@ const LeafsBCGImage = `url(${Leafs})`
 
 const ContactsBlock = styled.div`
   background-image: ${LeafsBCGImage};
-  height: 100vh;
+  min-height: 100vh;
   background-color: powderblue;
 `
-
+const ContactsAndFormBlock = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+`
 const ContactsContainer = styled.div`
   ${Container};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  @media screen and (max-width: 700px) {
-    .Form {
-      width: 100%;
+  @media screen and (max-width: 992px) {
+    ${ContactsAndFormBlock} {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
     }
-  }
 `
 const Form = styled.form`
   width: 100%;
@@ -77,20 +101,12 @@ const Form = styled.form`
 const StyledContacts = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   width: 40%;
   margin-right: 50px;
   padding-top: 10px;
 `
-const ContactsAndFormBlock = styled.div`
-  //height: 30%;
-  width: 100%;
-  //background-color: orange;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-top: -150px;
-`
+
 const SubmitButton = styled.button`
   height: 50px;
   width: 200px;
@@ -105,6 +121,9 @@ const SubmitButton = styled.button`
   text-transform: uppercase;
   border-radius: 30px;
   border: none;
+  margin: 10px;
+  cursor: pointer;
+
   &:hover {
     ${PrimaryBackgroundColor}
     ${PrimaryTextColor};
@@ -138,6 +157,10 @@ const InputsBlock = styled.div`
   flex-direction: row;
   justify-content: center;
   margin: 0;
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const InputWrapper = styled.div`
   display: flex;

@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Title.module.css';
 import styled from 'styled-components';
 import {PrimaryTextColor} from '../styles/Colors';
 import {PrimaryFont} from '../styles/Styeles';
@@ -27,7 +26,7 @@ const Heading = styled.div`
   flex-direction:column;
   align-items: flex-start;
 `
-const TitleStyle = styled.div`
+ export const TitleStyle = styled.div`
   margin-bottom: 50px;
   & h2 {
     ${PrimaryFont};
@@ -37,6 +36,5 @@ const TitleStyle = styled.div`
     letter-spacing: 3px;
     ${PrimaryTextColor};
     margin: 0;
-   
   }
 `

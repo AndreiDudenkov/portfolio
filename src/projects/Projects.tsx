@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './Projects.module.css';
 import {Container} from '../common/styles/Styeles';
 import {Project} from './project/Project';
 import {Title} from '../common/components/Title';
@@ -8,7 +7,6 @@ import FactCheck from '@mui/icons-material/FactCheck';
 import ThreeP from '@mui/icons-material/ThreeP';
 import Filter1 from '@mui/icons-material/Filter1';
 import WallAndTree from './../assets/image/wallAndTree.jpg';
-import {Remote} from '../remote/Remote';
 
 export const Projects = () => {
 
@@ -33,24 +31,25 @@ const ProjectsBlock = styled.div`
   background-image:${ProjectsBlockBCGImage};
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
 `
 const ProjectsStyle = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 `
 const ProjectsContainer = styled.div`
   ${Container};
-  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  @media screen and (max-width: 630px) {
+  box-sizing: border-box;
+  @media screen and (max-width: 850px) {
     & ${ProjectsStyle} {
       justify-content: space-around;
+      align-items: center;
     }
   }
 `

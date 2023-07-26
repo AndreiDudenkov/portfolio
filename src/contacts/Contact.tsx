@@ -36,6 +36,10 @@ const StyledContact = styled.div`
   display: flex;
   margin-bottom: 20px;
   width: 100%;
+  flex-wrap: nowrap;
+  @media screen and (max-width: 360px) {
+    margin-top: 10px;
+  }
 `
 const StyledH5 = styled.h5`
   ${PrimaryFont};
@@ -44,6 +48,7 @@ const StyledH5 = styled.h5`
   text-transform: uppercase;
   letter-spacing: .1em;
   margin: 0;
+  white-space: nowrap;
 `
 const StyledP = styled.p`
   text-transform: none;
@@ -52,8 +57,6 @@ const StyledP = styled.p`
   letter-spacing: .4px;
   margin: 0;
 `
-
-
 const StyledSVG = styled.div`
   border-radius: 50%;
   width: 50px;
@@ -115,4 +118,5 @@ const TextContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 50px;
+  flex-wrap: nowrap;
 `

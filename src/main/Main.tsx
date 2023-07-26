@@ -12,17 +12,15 @@ export const Main = () => {
             <Header/>
             <MainContainer>
                 <TextStyles>
-                    <HeadingPretitle>Hi There</HeadingPretitle>
+                    <HeadingSubtitle>Hi There</HeadingSubtitle>
                     <StyledTitle>I am Andrei Dudenkov</StyledTitle>
-                    <StyledParagraph>Front-end Developer</StyledParagraph>
+                    <StyledSecondTitle>Front-end Developer</StyledSecondTitle>
                     <Zigzag/>
                 </TextStyles>
                 <SeeLink>see my projects</SeeLink>
-                <PhotoStyles></PhotoStyles>
             </MainContainer>
         </MainBlock>
     )
-
 }
 const MainBCGImage = `url(${ManInForest})`
 
@@ -32,38 +30,27 @@ const TextStyles = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-`
-const PhotoStyles = styled.div`
-  //width: 300px;
-  //height: 400px;
-  //background-color: darkseagreen;
+  text-align: center;
 `
 const MainContainer = styled.div`
   ${Container};
-  border: none;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
 `
 const MainBlock = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background-image: ${MainBCGImage};
   background-size: cover;
   background-position: center;
-  // @media screen and (max-width: 812px) {
-  //   & ${MainContainer} {
-  //     flex-direction: column;
-  //     justify-content: space-evenly;
-  //     align-items: center;
-  //   }
-  // }
-  @media screen and (max-width: 438px) {
-    & ${TextStyles}, & ${PhotoStyles} {
+  @media screen and (max-width: 576px) {
+    & ${TextStyles}{
       width: 100%;
     }
   }
 `
-const HeadingPretitle = styled.span`
+const HeadingSubtitle = styled.span`
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 500;
@@ -80,9 +67,13 @@ const StyledTitle = styled.h1`
   margin-bottom: 0;
   font-size: 66px;
   ${PrimaryFont};
-  ${PrimaryTextColor}
+  ${PrimaryTextColor};
+  
+  @media screen and (max-width: 576px) {
+    font-size: 40px
+}
 `
-const StyledParagraph = styled.p`
+const StyledSecondTitle= styled.div`
   text-transform: uppercase;
   line-height: 90px;
   font-weight: 600;
@@ -90,7 +81,10 @@ const StyledParagraph = styled.p`
   margin-bottom: 0;
   font-size: 66px;
   ${PrimaryFont};
-  ${PrimaryTextColor}
+  ${PrimaryTextColor};
+  @media screen and (max-width: 576px) {
+  font-size: 40px
+}
 `
 
 const SeeLink = styled.a`
@@ -107,6 +101,7 @@ const SeeLink = styled.a`
   text-transform: uppercase;
   border-radius: 30px;
   transition: .5s;
+  margin: 15px;
   &:hover {
     ${PrimaryBackgroundColor}
     ${PrimaryTextColor};

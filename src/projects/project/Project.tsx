@@ -1,11 +1,7 @@
 import React from 'react';
-import s from './Project.module.css';
 import styled from 'styled-components';
 import { SecondaryFont} from '../../common/styles/Styeles';
-import {
-    PrimaryBackgroundColor, PrimaryColor,
-    PrimaryTextColor
-} from '../../common/styles/Colors';
+import {PrimaryBackgroundColor, PrimaryColor, PrimaryTextColor} from '../../common/styles/Colors';
 
 
 type ProjectType = {
@@ -37,8 +33,6 @@ const ProjectName = styled.h3`
   display: flex;
   justify-content: center;
   transition: width 2s;
-
-
 `
 export const Image = styled.svg`
   display: flex;
@@ -64,6 +58,7 @@ const ProjectStyle = styled.div`
   justify-content: center;
   align-items: center;
   padding: 25px;
+  margin: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(255, 255, 255, .5);
@@ -108,8 +103,6 @@ const ViewLink = styled.a`
   ${PrimaryBackgroundColor};
   text-transform: uppercase;
   border-radius: 30px;
-
-
   ${ProjectStyle}:hover & {
     height: 50px;
   }

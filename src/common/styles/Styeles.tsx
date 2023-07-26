@@ -1,16 +1,19 @@
 import {css} from 'styled-components';
 
 export const Container = css`
-  //border: 1px solid;
-  height: 100%;
-  width: 80%;
+  min-height: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-`;
+  padding: 100px 100px 100px 100px;
+  @media screen and (max-width: 576px) {
+    padding: 20px;
+  }
+`
 
 export const PrimaryFont = css`
 font-family: 'Dosis', sans-serif;`

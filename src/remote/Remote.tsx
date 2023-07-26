@@ -21,8 +21,6 @@ export const Remote = () => {
 const BridgeBCGImage = `url(${Bridge})`
 
 const RemoteBlock = styled.div`
-  
-  height: 50vh;
   background-image: ${BridgeBCGImage};
   background-size: cover;
   background-position: center;
@@ -36,14 +34,6 @@ const RemoteContainer = styled.div`
   align-items: center;
 
 `
-// const StyledButton = styled.div`
-//   height: 50px;
-//   width: 200px;
-// `
-// const StyledHeader = styled.h2`
-//   height: 50px;
-//   width: 200px;
-// `
 const SeeLink = styled.a`
   height: 50px;
   width: 200px;
