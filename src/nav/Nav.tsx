@@ -22,6 +22,12 @@ const NavStyles = styled.div`
   @media screen and (max-width: 768px) {
     margin: 0 auto;
   }
+  @media screen and (max-width: 992px) {
+    display: none ;
+  }
+  @media screen and (min-width: 992px) {
+    display: flex ;
+  }
 `
 const NavLink = styled.a`
   ${PrimaryTextColor};
