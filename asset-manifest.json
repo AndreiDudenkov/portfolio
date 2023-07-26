@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.23d426ca.css",
-    "main.js": "/portfolio/static/js/main.ed0b7cea.js",
-    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "main.css": "/portfolio/static/css/main.2cd3bb3b.css",
+    "main.js": "/portfolio/static/js/main.ff8d84a3.js",
+    "static/js/651.0651393f.chunk.js": "/portfolio/static/js/651.0651393f.chunk.js",
+    "static/media/Bridge.jpg": "/portfolio/static/media/Bridge.57c45c46632eaefa0a48.jpg",
+    "static/media/Leafs.jpg": "/portfolio/static/media/Leafs.984eea1c792db5d3419e.jpg",
+    "static/media/wallAndTree.jpg": "/portfolio/static/media/wallAndTree.82ffbc0c76930ba649a2.jpg",
+    "static/media/forest.jpg": "/portfolio/static/media/forest.3bbc738c10f9bfa38fd7.jpg",
+    "static/media/BigLeafs.jpg": "/portfolio/static/media/BigLeafs.79ce40d67a7bd5270600.jpg",
+    "static/media/bg2.jpg": "/portfolio/static/media/bg2.b0f79b048730638fd2c4.jpg",
+    "static/media/road.jpg": "/portfolio/static/media/road.171d895728fe3953200d.jpg",
     "index.html": "/portfolio/index.html",
-    "main.23d426ca.css.map": "/portfolio/static/css/main.23d426ca.css.map",
-    "main.ed0b7cea.js.map": "/portfolio/static/js/main.ed0b7cea.js.map",
-    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+    "main.2cd3bb3b.css.map": "/portfolio/static/css/main.2cd3bb3b.css.map",
+    "main.ff8d84a3.js.map": "/portfolio/static/js/main.ff8d84a3.js.map",
+    "651.0651393f.chunk.js.map": "/portfolio/static/js/651.0651393f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.23d426ca.css",
-    "static/js/main.ed0b7cea.js"
+    "static/css/main.2cd3bb3b.css",
+    "static/js/main.ff8d84a3.js"
   ]
 }
