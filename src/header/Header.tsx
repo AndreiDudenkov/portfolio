@@ -1,17 +1,13 @@
 import React from 'react';
-import {Nav} from "../nav/Nav";
 import styled from 'styled-components';
-import {BurgerMenu} from './Burger-menu';
-import {BurgerGPTMenu} from './GPTmenu';
-
+import {NavBar} from './India/NavBar';
 
 
 
 export const  Header = ()=> {
     return (
         <HeaderStyles>
-            <Nav/>
-            <BurgerMenu/>
+            <NavBar/>
         </HeaderStyles>
     )
 }
@@ -21,9 +17,6 @@ const HeaderStyles = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  @media screen and (max-width: 992px) {
-    padding:  0 20px 0 0;
-  }
 `
 
 

@@ -14,9 +14,8 @@ export const BurgerMenu = () => {
     return (
         <AllMenu>
             <StyledButton onClick={toggleMenu}><MenuIcon/></StyledButton>
-            {isOpen && (
                 <Overlay onClick={toggleMenu}>
-                    <StyledMenu open={isOpen}>
+                    <StyledMenu>
                         <List>
                             <StyledButton onClick={toggleMenu}><ClearIcon/></StyledButton>
                             <ListItem>Main</ListItem>
@@ -26,9 +25,11 @@ export const BurgerMenu = () => {
                         </List>
                     </StyledMenu>
                 </Overlay>
-            )}
         </AllMenu>
     );
+}
+interface MyULProps extends React.HTMLAttributes<HTMLUListElement> {
+    isOpen?: boolean;
 }
 const MainBCGImage = `url(${Road})`
 
@@ -40,29 +41,30 @@ const AllMenu = styled.div`
     display: none ;
   }
 `;
-const Overlay = styled.div`
+const Overlay = styled.div<MyULProps>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: (${({isOpen}) => isOpen ? '100%' : 0});
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
 `;
 
 
-const StyledMenu = styled.div<{open:boolean}>`
+
+const StyledMenu = styled.div<MyULProps>`
   background-image: ${MainBCGImage};
   background-size: cover;
   background-position: center;
   padding-top: 10px;
   width: 300px;
   height: 100%;
-  // transform: translateX(${props => props.open ? 0 : '100%'});
-  // transition: transform 0.5s ease-in-out;
+  transform: translateX(${({isOpen}) => isOpen ? 0 : '100%'});
+  transition: transform 0.5s ease-in-out;
 `;
 
 const List = styled.div`
