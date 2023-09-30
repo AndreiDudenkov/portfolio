@@ -7,10 +7,10 @@ import {SecondaryFont} from '../common/styles/Styeles';
 export const Nav = () => {
     return (
         <NavStyles>
-            <NavLink href="">Main</NavLink>
-            <NavLink href="">Skills</NavLink>
-            <NavLink href="">Projects</NavLink>
-            <NavLink href="">Contacts</NavLink>
+            <NavLink href="#main">Main</NavLink>
+            <NavLink href="#skills">Skills</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#contacts">Contacts</NavLink>
         </NavStyles>
     )
 

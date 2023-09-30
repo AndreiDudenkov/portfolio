@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled from 'styled-components';
 import {Container, PrimaryFont, SecondaryFont} from '../common/styles/Styeles';
 import ManInForest from './../assets/image/bg2.jpg';
@@ -6,9 +6,12 @@ import {PrimaryBackgroundColor, PrimaryTextColor} from '../common/styles/Colors'
 import {Zigzag} from '../common/components/Zigzag';
 import {Header} from '../header/Header';
 
-export const Main = () => {
+
+
+export const Main= ()=> {
+
     return (
-        <MainBlock>
+        <MainBlock id={'main'}>
             <Header/>
             <MainContainer>
                 <TextStyles>
@@ -17,7 +20,7 @@ export const Main = () => {
                     <StyledSecondTitle>Front-end Developer</StyledSecondTitle>
                     <Zigzag/>
                 </TextStyles>
-                <SeeLink>see my projects</SeeLink>
+                <SeeLink href='#projects'>see my projects</SeeLink>
             </MainContainer>
         </MainBlock>
     )
@@ -88,6 +91,8 @@ const StyledSecondTitle= styled.div`
 `
 
 const SeeLink = styled.a`
+  text-decoration: none;
+  color: inherit;
   height: 50px;
   width: 200px;
   display: flex;

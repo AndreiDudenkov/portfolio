@@ -1,4 +1,4 @@
-import React, {FormEventHandler, MouseEventHandler, useState} from 'react';
+import React, {FormEventHandler, MouseEventHandler, useRef, useState} from 'react';
 import {Container, PrimaryFont, SecondaryFont} from '../common/styles/Styeles';
 import styled from 'styled-components';
 import {Title, TitleStyle} from '../common/components/Title';
@@ -17,12 +17,19 @@ export const Contacts = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
+
+
+
     const submitHandler:FormEventHandler<HTMLFormElement>  = (e) => {
         e.preventDefault()
+        setName('')
+        setEmail('')
+        setMessage('')
         alert((`Name: ${name}\nEmail: ${email}\nMessage: ${message}`))
     }
     return (
-        <ContactsBlock>
+        <ContactsBlock id={'contacts'}>
             <ContactsContainer>
                 <Title title={'My contacts'}/>
                 <ContactsAndFormBlock>
@@ -31,7 +38,7 @@ export const Contacts = () => {
                         <Contact svg={EmailIconSVG} title={'EMAIL ME'} content={'andrei634d@gmail.com'}/>
                         <Contact svg={HomeIconSVG} title={'ADDRESS'} content={'Belarus, Vitebsk'}/>
                     </StyledContacts>
-                    <Form onSubmit={submitHandler}>
+                    <Form onSubmit={submitHandler} action="mailto:andrei634d@gmail.com" method="post">
                         <InputsBlock>
                             <InputWrapper>
                                 <StyledInput type="text"
@@ -52,8 +59,11 @@ export const Contacts = () => {
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}/>
                         </TextareaWrapper>
+                        <ButtonWrapper>
                         <SubmitButton type="submit">Submit</SubmitButton>
+                        </ButtonWrapper>
                     </Form>
+
                 </ContactsAndFormBlock>
             </ContactsContainer>
         </ContactsBlock>
@@ -106,8 +116,13 @@ const StyledContacts = styled.div`
   margin-right: 50px;
   padding-top: 10px;
 `
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const SubmitButton = styled.button`
+ 
   height: 50px;
   width: 200px;
   display: flex;

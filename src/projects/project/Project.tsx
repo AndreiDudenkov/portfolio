@@ -50,6 +50,42 @@ const ImageProjectNameContainer = styled.div`
   flex-direction: column;
 `
 
+// const ProjectStyle = styled.div`
+//   display: flex;
+//   width: 250px;
+//   height: 200px;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 25px;
+//   margin: 20px;
+//   background-color: #fff;
+//   border-radius: 10px;
+//   box-shadow: 0 0 8px rgba(255, 255, 255, .5);
+//
+//   &:hover {
+//     justify-content: space-between;
+//     align-items: center;
+//
+//     ${Image} {
+//       height: 75px;
+//       width: 75px;
+//       margin: 10px;
+//     }
+//
+//     ${ImageProjectNameContainer} {
+//       width: 100%;
+//       flex-direction: row;
+//       justify-content: center;
+//       align-items: center;
+//     }
+//
+//     ${ProjectName} {
+//       width: 30%;
+//       margin: 10px;
+//     }
+//   }
+// `
 const ProjectStyle = styled.div`
   display: flex;
   width: 250px;
@@ -62,31 +98,54 @@ const ProjectStyle = styled.div`
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(255, 255, 255, .5);
+  @media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    ${Image} {
+      height: auto;
+      width: auto;
+      margin: 0;
+    }
+
+    ${ImageProjectNameContainer} {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ${ProjectName} {
+      width: 100%;
+      margin: 10px;
+    }
+  }
 
   &:hover {
     justify-content: space-between;
     align-items: center;
-
+    
     ${Image} {
       height: 75px;
       width: 75px;
       margin: 10px;
     }
-
+    
     ${ImageProjectNameContainer} {
       width: 100%;
       flex-direction: row;
       justify-content: center;
       align-items: center;
     }
-
+    
     ${ProjectName} {
       width: 30%;
       margin: 10px;
     }
-
   }
-`
+
+ 
+  }
+`;
 const ViewLink = styled.a`
   height: 0px;
   width: 200px;

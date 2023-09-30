@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {PrimaryColor, PrimaryTextColor} from '../../common/styles/Colors';
 import {PrimaryFont, SecondaryFont} from '../../common/styles/Styeles';
@@ -6,19 +6,33 @@ import Road from '../../assets/image/road.jpg';
 
 type RightNavType = {
     open: boolean
+    setView: () => void
 }
 
-export const RightNav: React.FC<RightNavType> = ({open}) => {
+export const RightNav: React.FC<RightNavType> = ({open, setView}) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <Ul open={open}>
-            <li>Main</li>
-            <li>Skills</li>
-            <li>Projects</li>
-            <li>Contacts</li>
+            <a href='#main' onClick={isMobile ? () => setView() : undefined}>Main</a>
+            <a href='#skills' onClick={isMobile ? () => setView() : undefined}>Skills</a>
+            <a href='#projects' onClick={isMobile ? () => setView() : undefined}>Projects</a>
+            <a href='#contacts' onClick={isMobile ? () => setView() : undefined}>Contacts</a>
         </Ul>
     );
-}
-
+};
 
 interface MyULProps extends React.HTMLAttributes<HTMLUListElement> {
     open?: boolean;
@@ -26,11 +40,13 @@ interface MyULProps extends React.HTMLAttributes<HTMLUListElement> {
 const MainBCGImage = `url(${Road})`
 
 const Ul = styled.ul<MyULProps>`
+ 
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
 
-  li {
+  a {
+    text-decoration: none;
     list-style: none;
     padding: 18px 10px;
     ${PrimaryTextColor};
@@ -60,7 +76,7 @@ const Ul = styled.ul<MyULProps>`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 1s ease-in-out;
-    li {
+    a {
       list-style: none;
       flex-direction: column;
       align-items: center;

@@ -7,19 +7,45 @@ import Javascript from '@mui/icons-material/Javascript';
 import Css from '@mui/icons-material/Css';
 import Html from '@mui/icons-material/Html';
 import {LiaReact} from "react-icons/lia"
+import {TbBrandStorybook, TbBrandTypescript} from 'react-icons/tb';
+import { TbBrandRedux } from "react-icons/tb";
+import { SiAxios } from "react-icons/si";
+import { SiSwagger } from "react-icons/si";
+import { SiPostman } from "react-icons/si";
 import Forest from './../assets/image/forest.jpg';
+import {BsGit} from 'react-icons/bs';
+
 
 
 export const Skills = () => {
+    let images = [
+        {
+
+            url: '/img/typescript.svg'
+        },
+        {
+
+            url: '/img/ts.svg'
+        }
+    ]
+
     return (
-        <SkillsBlock>
+        <SkillsBlock id={'skills'}>
             <SkillsContainer>
                 <Title title={'My skills'}/>
                 <StyledSkills>
-                    <Skill technology={'HTML'} icon={<Html/>}/>
-                    <Skill technology={'JS'} icon={<Javascript/>}/>
-                    <Skill technology={'CSS'} icon={<Css/>}/>
-                    <Skill technology={'REACT'} icon={<LiaReact/>}/>
+                    {images.map((el, index)=> <Skill  address={el.url}/>)}
+                    {/*<Skill technology={'REACT'} icon={<LiaReact/>}/>*/}
+                    {/*<Skill technology={'TS'} icon={<TbBrandTypescript/>}/>*/}
+                    {/*<Skill technology={'Redux'} icon={<TbBrandRedux/>}/>*/}
+                    {/*<Skill technology={'Axios'} icon={<SiAxios/>}/>*/}
+                    {/*<Skill technology={'Swagger '} icon={<SiSwagger/>}/>*/}
+                    {/*<Skill technology={'Postman '} icon={<SiPostman/>}/>*/}
+                    {/*<Skill technology={'Storybook '} icon={<TbBrandStorybook/>}/>*/}
+                    {/*<Skill technology={'Git '} icon={<BsGit/>}/>*/}
+                    {/*<Skill technology={'HTML'} icon={<Html/>}/>*/}
+                    {/*<Skill technology={'JS'} icon={<Javascript/>}/>*/}
+                    {/*<Skill technology={'CSS'} icon={<Css/>}/>*/}
                 </StyledSkills>
             </SkillsContainer>
         </SkillsBlock>

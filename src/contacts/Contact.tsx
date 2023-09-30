@@ -71,7 +71,7 @@ const StyledSVG = styled.div`
   &::before {
     content: "";
     height: 2px;
-    width: 64px;
+    width: 50px;
     background-color: #b0ca1e;
     position: absolute;
     z-index: 1;

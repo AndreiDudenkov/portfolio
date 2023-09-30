@@ -1,25 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import {PrimaryColor} from '../../common/styles/Colors';
+import {PrimaryBackgroundColor, PrimaryColor} from '../../common/styles/Colors';
 
 
 type SkillType = {
-    technology: string
-    icon: any
+
+    address: any
 }
-export const Skill: React.FC<SkillType> = ({technology, icon}) => {
+export const Skill: React.FC<SkillType> = ({ address}) => {
     return (
         <StyledSkill>
-            <Icon>{icon}</Icon>
-            <h3>{technology}</h3>
+            <Icon> <img src={`${process.env.PUBLIC_URL}${address}`} alt={''}/></Icon>
+
+
         </StyledSkill>
     )
 
 }
 const StyledSkill = styled.div`
   display: flex;
-  width: 250px;
-  height: 200px;
+  width: 150px;
+  height: 125px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -33,15 +34,16 @@ const StyledSkill = styled.div`
 `
 export const Icon = styled.div`
   display: flex;
-  height: 150px;
-  width: 60%;
+  width: 90%;
   justify-content: center;
   align-items: center;
   transition: height 1s;
-  & svg {
-    height: 150px;
-    width: 150px;
-    ${PrimaryColor};
+  
+  img {
+    fill: red;
+    height: 125px;
+    width: 125px;
+    ${PrimaryBackgroundColor};
     background-size: cover;
     background-position: center;
   }

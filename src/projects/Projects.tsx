@@ -11,7 +11,7 @@ import WallAndTree from './../assets/image/wallAndTree.jpg';
 export const Projects = () => {
 
     return (
-        <ProjectsBlock>
+        <ProjectsBlock id={'projects'}>
             <ProjectsContainer>
                 <Title title={'My projects'}/>
                 <ProjectsStyle>

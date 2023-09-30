@@ -6,6 +6,7 @@ import {Title} from '../common/components/Title';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import {PrimaryColor, PrimaryTextColor} from '../common/styles/Colors';
 
 export const Footer = () => {
@@ -15,13 +16,19 @@ export const Footer = () => {
                 <Title title={'Andrei Dudenkov'}/>
                 <ContentContainer>
                     <Content>
+                        <a href="https://github.com/AndreiDudenkov">
                             <GitHubIcon></GitHubIcon>
+                        </a>
                     </Content>
                     <Content>
+                        <a href="https://www.linkedin.com/in/andrei-dudenkov-448006287">
                             <LinkedInIcon></LinkedInIcon>
+                        </a>
                     </Content>
                     <Content>
-                            <InstagramIcon></InstagramIcon>
+                        <a href="https://t.me/Andrei_634">
+                            <TelegramIcon></TelegramIcon>
+                        </a>
                     </Content>
                 </ContentContainer>
                 <Rights>
@@ -63,6 +70,7 @@ const ContactsContainer = styled.div`
 const Content = styled.div`
   height: 40px;
   width: 40px;
+  cursor: pointer;
   & svg{
     height: 100%;
     width: 100%;
