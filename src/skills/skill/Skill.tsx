@@ -4,15 +4,12 @@ import {PrimaryBackgroundColor, PrimaryColor} from '../../common/styles/Colors';
 
 
 type SkillType = {
-
-    address: any
+    icon: any
 }
-export const Skill: React.FC<SkillType> = ({ address}) => {
+export const Skill: React.FC<SkillType> = ({icon}) => {
     return (
         <StyledSkill>
-            <Icon> <img src={`${process.env.PUBLIC_URL}${address}`} alt={''}/></Icon>
-
-
+            <Icon>{icon}</Icon>
         </StyledSkill>
     )
 
@@ -38,12 +35,10 @@ export const Icon = styled.div`
   justify-content: center;
   align-items: center;
   transition: height 1s;
-  
-  img {
-    fill: red;
+  svg {
     height: 125px;
     width: 125px;
-    ${PrimaryBackgroundColor};
+    ${PrimaryColor};
     background-size: cover;
     background-position: center;
   }

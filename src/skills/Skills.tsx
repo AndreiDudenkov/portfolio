@@ -18,15 +18,18 @@ import {BsGit} from 'react-icons/bs';
 
 
 export const Skills = () => {
-    let images = [
-        {
-
-            url: '/img/typescript.svg'
-        },
-        {
-
-            url: '/img/ts.svg'
-        }
+    let icons = [
+        { icon: <LiaReact/>},
+        { icon: <TbBrandTypescript/>},
+        { icon: <TbBrandRedux/>},
+        { icon: <SiAxios/>},
+        { icon: <SiSwagger/>},
+        { icon: <SiPostman/>},
+        { icon: <TbBrandStorybook/>},
+        { icon: <BsGit/>},
+        { icon: <Html/>},
+        { icon: <Javascript/>},
+        { icon: <Css/>},
     ]
 
     return (
@@ -34,18 +37,7 @@ export const Skills = () => {
             <SkillsContainer>
                 <Title title={'My skills'}/>
                 <StyledSkills>
-                    {images.map((el, index)=> <Skill  address={el.url}/>)}
-                    {/*<Skill technology={'REACT'} icon={<LiaReact/>}/>*/}
-                    {/*<Skill technology={'TS'} icon={<TbBrandTypescript/>}/>*/}
-                    {/*<Skill technology={'Redux'} icon={<TbBrandRedux/>}/>*/}
-                    {/*<Skill technology={'Axios'} icon={<SiAxios/>}/>*/}
-                    {/*<Skill technology={'Swagger '} icon={<SiSwagger/>}/>*/}
-                    {/*<Skill technology={'Postman '} icon={<SiPostman/>}/>*/}
-                    {/*<Skill technology={'Storybook '} icon={<TbBrandStorybook/>}/>*/}
-                    {/*<Skill technology={'Git '} icon={<BsGit/>}/>*/}
-                    {/*<Skill technology={'HTML'} icon={<Html/>}/>*/}
-                    {/*<Skill technology={'JS'} icon={<Javascript/>}/>*/}
-                    {/*<Skill technology={'CSS'} icon={<Css/>}/>*/}
+                    {icons.map((el, index)=> <Skill icon={el.icon}/>)}
                 </StyledSkills>
             </SkillsContainer>
         </SkillsBlock>
