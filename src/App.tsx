@@ -11,33 +11,16 @@ import {Route, Router, Routes} from 'react-router-dom';
 import styled from 'styled-components';
 
 export const App = () => {
-    // const [scrollStarted, setScrollStarted] = useState(false);
-    //
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (window.scrollY > 0) {
-    //             setScrollStarted(true);
-    //         } else {
-    //             setScrollStarted(false);
-    //         }
-    //     };
-    //
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
     return (
             <div>
-                {/*<Header scrollStarted={scrollStarted}/>*/}
                 <Main/>
+                <main>
                 <Skills/>
                 <Projects/>
                 <Remote/>
                 <Contacts/>
+                </main>
                 <Footer/>
             </div>
     )
 }
-
-// const AppWrapp

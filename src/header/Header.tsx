@@ -22,11 +22,6 @@ const HeaderStyles = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  // position: sticky;
-  // top: 0;
-  // background-color: #282c34;
-  // z-index: 10;
-  // transition: opacity 1s ease-in-out;
 `
 
 

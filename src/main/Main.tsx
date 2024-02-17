@@ -42,7 +42,7 @@ const MainContainer = styled.div`
   align-items: center;
 
 `
-const MainBlock = styled.div`
+const MainBlock = styled.header`
   min-height: 100vh;
   background-image: ${MainBCGImage};
   background-size: cover;

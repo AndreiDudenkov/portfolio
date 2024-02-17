@@ -42,7 +42,7 @@ export const Footer = () => {
 }
 const FooterBCGImage = `url(${BigLeafs})`
 
-const ContactsBlock = styled.div`
+const ContactsBlock = styled.footer`
   min-height: 360px;
   display: flex;
   flex-direction: column;

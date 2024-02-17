@@ -25,7 +25,6 @@ const StyledSkill = styled.div`
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(255, 255, 255, .5);
-  margin: 20px;
   background-size: cover;
   background-position: center;
 `

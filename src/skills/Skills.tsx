@@ -53,12 +53,11 @@ const SkillsBlock = styled.div`
   background-position: center;
 `
 const StyledSkills = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin: 20px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 `
 const SkillsContainer = styled.div`
   padding: 100px 0;

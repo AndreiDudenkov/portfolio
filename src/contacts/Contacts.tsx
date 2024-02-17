@@ -73,9 +73,10 @@ export const Contacts = () => {
 const LeafsBCGImage = `url(${Leafs})`
 
 const ContactsBlock = styled.div`
-  background-image: ${LeafsBCGImage};
-  min-height: 100vh;
-  background-color: powderblue;
+    background-image: ${LeafsBCGImage};
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
 `
 const ContactsAndFormBlock = styled.div`
   width: 100%;
